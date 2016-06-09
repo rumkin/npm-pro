@@ -1,0 +1,8 @@
+{
+    "main": "src/index.js",
+    "scripts": {
+        "cov": "istanbul cover node_modules/mocha/bin/_mocha -- -u exports -R spec test/**.spec.js",
+        "test": "mocha test/**.spec.js"
+    },
+    "license": "MIT"
+}
