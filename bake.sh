@@ -3,7 +3,22 @@ function __init {
     npm init
 }
 
-function __intial_deps {
-    npm i mocha --save-dev
-    npm i istanbul --save-dev
+function __initial_deps {
+    set -e
+    bake dev mocha
+    bake dev istanbul
+}
+
+# Install node package
+function i {
+    npm i $@
+}
+
+# Install dev dependency
+function __dev {
+    npm i --save-dev $@
+}
+
+function __cov {
+    npm run cov
 }
