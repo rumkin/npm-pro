@@ -10,7 +10,7 @@ function __initial_deps {
 }
 
 # Install node package
-function i {
+function __i {
     npm i $@
 }
 
