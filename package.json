@@ -1,8 +1,10 @@
 {
-    "main": "src/index.js",
+    "main": "build/index.js",
     "scripts": {
-        "cov": "istanbul cover node_modules/mocha/bin/_mocha -- -u exports -R spec test/**.spec.js",
-        "test": "mocha test/**.spec.js"
+        "build": "[ -d build ] && rm -rf build; cp -r src build",
+        "cov": "npm build && istanbul cover node_modules/mocha/bin/_mocha -- -u exports -R spec test/**.spec.js",
+        "test": "npm build && mocha test/**.spec.js",
+        "prepublish": "npm build"
     },
     "license": "MIT"
 }
