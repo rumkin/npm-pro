@@ -10,7 +10,7 @@ task:install() {
     # install build suit
     bake dev babel-core babel-cli babel-preset-env
     # install lint suit
-    bake dev eslint eslint-plugin-import lint-staged pre-commit
+    bake dev eslint eslint-plugin-import eslint-config-airbnb-base lint-staged pre-commit
 }
 
 # Install node package

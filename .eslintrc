@@ -8,6 +8,9 @@
   "plugins": [
     "import"
   ],
+  "extends": [
+    "airbnb-base"
+  ],
   "rules": {
     "block-scoped-var": 2,
     "brace-style": [2, "stroustrup"],
@@ -27,13 +30,14 @@
     "quotes": [2, "single", "avoid-escape"],
     "semi": [2, "always"],
     "keyword-spacing": [2, {"before": true, "after": true}],
-    "object-curly-spacing": [2, "never"],
     "array-bracket-spacing": [2, "never"],
     "computed-property-spacing": 1,
     "space-unary-ops": 0,
     "valid-jsdoc": 1,
     "no-nested-ternary": 2,
     "no-underscore-dangle": 0,
+    "global-require": 0,
+    "import/no-dynamic-require": 0,
     "comma-dangle": [2, "always-multiline"],
     "no-shadow": 1,
     "arrow-parens": [
@@ -53,9 +57,10 @@
     "import/prefer-default-export": 0,
     "indent": [
       2,
-      2,
+      4,
       {
-        "SwitchCase": 1
+        "SwitchCase": 1,
+        "MemberExpression": 0
       }
     ],
     "newline-per-chained-call": 0,
