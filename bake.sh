@@ -1,12 +1,16 @@
 task:init() {
-    task:initial_deps
+    task:install
     npm init
 }
 
-task:initial_deps() {
+task:install() {
     set -e
-    bake dev mocha
-    bake dev istanbul
+     # install test suit
+    bake dev mocha istanbul should
+    # install build suit
+    bake dev babel-core babel-cli babel-preset-env
+    # install lint suit
+    bake dev eslint eslint-plugin-import lint-staged pre-commit
 }
 
 # Install node package
@@ -17,6 +21,10 @@ task:i() {
 # Install dev dependency
 task:dev() {
     npm i --save-dev $@
+}
+
+task:test() {
+    npm run test
 }
 
 task:cov() {

@@ -1,11 +1,18 @@
 {
-    "main": "build/index.js",
+    "main": "dist/index.js",
     "scripts": {
-        "build": "[ -d build ] && rm -rf build; cp -r src build",
+        "build": "babel src -d dist",
         "start": "npm run build && node .",
         "cov": "npm run build && istanbul cover node_modules/mocha/bin/_mocha -- -u exports -R spec test/**.spec.js",
         "test": "npm run build && mocha test/**.spec.js",
-        "prepublish": "npm run build"
+        "prepublish": "npm run build",
+        "lint:eslint": "eslint",
+        "lint:staged": "lint-staged"
     },
-    "license": "MIT"
+    "lint-staged": {
+        "*.js": "lint:eslint"
+    },
+    "pre-commit": "lint:staged",
+    "license": "MIT",
+    "devDependencies": {}
 }
